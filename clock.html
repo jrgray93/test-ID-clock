@@ -1,0 +1,23 @@
+<html>
+<div id="clockbox" style="font:164pt Arial; text-align:center; color:#000000;"></div>
+
+<script type="text/javascript">
+function GetClock(){
+var d=new Date();
+var nhour=d.getHours(),nmin=d.getMinutes(),ap;
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+
+var clocktext=""+nhour+":"+nmin+ap+"";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+<div style="font:86pt Arial; text-align:center; color:#000000;">OHIO-64DA-77</div>
+</html>
